@@ -10,6 +10,17 @@ services:
       - /path/to/folder/on/server/minecraft:/data
     environment:
       - EULA=TRUE
+      - MOTD="Gurras Minecraftserver"
+      - MAX_PLAYERS=50
+      - MAX_WORLD_SIZE=10000
+      - ALLOW_NETHER=true
+      - PVP=false
+      - ALLOW_FLIGHT=TRUE
+      - SERVER_NAME=Gurra
+      # Java Settings
+      - MEMORY=2G # Denna är väll den enda viktiga, 2gig borde räcka för vanligt omoddat minecraft
+      - INIT_MEMORY=1G
+      - MAX_MEMORY=4G
     restart: unless-stopped
 
   npm:
@@ -23,6 +34,6 @@ services:
       - /path/to/folder/on/server/npm/data:/data
       - /path/to/folder/on/server/npm/letsencrypt:/etc/letsencrypt
     environment:
-      -  DB_SQLITE_FILE = /data/database.sqlite
-      -  DISABLE_IPV6 = true
+      -  DB_SQLITE_FILE=/data/database.sqlite
+      -  DISABLE_IPV6=true
     restart: unless-stopped
