@@ -7,7 +7,7 @@ services:
     ports:
       - 25565:25565
     volumes:
-      - /raid0/docker/minecraft:/data
+      - /mnt/docker/minecraft:/data
     environment:
       - EULA=TRUE
       - MOTD="Gurras Minecraftserver"
@@ -31,8 +31,8 @@ services:
       - 443:443
       - 81:81
     volumes:
-      - /raid0/docker/npm/data:/data
-      - /raid0/docker/npm/letsencrypt:/etc/letsencrypt
+      - /mnt/docker/npm/data:/data
+      - /mnt/docker/npm/letsencrypt:/etc/letsencrypt
     environment:
       -  DB_SQLITE_FILE=/data/database.sqlite
       -  DISABLE_IPV6=true
