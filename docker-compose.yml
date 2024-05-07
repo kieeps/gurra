@@ -7,7 +7,7 @@ services:
     ports:
       - 25565:25565
     volumes:
-      - /path/to/folder/on/server:/data
+      - /path/to/folder/on/server/minecraft:/data
     environment:
       - EULA=TRUE
     restart: unless-stopped
@@ -20,8 +20,8 @@ services:
       - 443:443
       - 81:81
     volumes:
-      - /path/to/folder/on/server/data:/data
-      - /path/to/folder/on/server/letsencrypt:/etc/letsencrypt
+      - /path/to/folder/on/server/npm/data:/data
+      - /path/to/folder/on/server/npm/letsencrypt:/etc/letsencrypt
     environment:
       -  DB_SQLITE_FILE = /data/database.sqlite
       -  DISABLE_IPV6 = true
